@@ -30,13 +30,13 @@ const ProductCard = ({ product }) => {
           </p>
           <div>
             <button
-              className="px-2 py-2 text-white bg-indigo-600 hover:bg-indigo-800 rounded-lg"
+              className="p-1 text-white bg-indigo-600 hover:bg-indigo-800 rounded-lg"
               onClick={handleAddToCart}
             >
               Add To Cart
             </button>
             <button
-              className="ml-2 px-2 py-2 text-white bg-red-600 hover:bg-red-800 rounded-lg"
+              className="ml-2 p-1 text-white bg-red-600 hover:bg-red-800 rounded-lg"
               onClick={handleRemoveFromCart}
             >
               Remove From Cart
