@@ -36,7 +36,7 @@ const ProductCard = ({ product }) => {
               Add To Cart
             </button>
             <button
-              className="ml-2 p-1 text-white bg-red-600 hover:bg-red-800 rounded-lg"
+              className="p-1 text-white bg-red-600 hover:bg-red-800 rounded-lg"
               onClick={handleRemoveFromCart}
             >
               Remove From Cart
