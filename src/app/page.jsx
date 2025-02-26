@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <HomePage></HomePage>
-      {/* <ProductList></ProductList> */}
+      <ProductList></ProductList>
     </div>
   );
 }

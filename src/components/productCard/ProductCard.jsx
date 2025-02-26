@@ -1,23 +1,16 @@
+//
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "../redux/cartSlice";
+import { addToCart, removeFromCart } from "../../redux/productSlice";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, quantity }) => {
   const dispatch = useDispatch();
-
-  const handleAddToCart = () => {
-    dispatch(addToCart(product));
-  };
-
-  const handleRemoveFromCart = () => {
-    dispatch(removeFromCart(product));
-  };
 
   return (
     <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
       <img
-        src={product.thumbnail}
-        alt={product.name}
+        src={product.thumbnail || "https://via.placeholder.com/150"} // Fallback image
+        alt={product.name || "Product Image"}
         className="w-full h-64 hover:scale-110 object-cover object-center"
       />
       <div className="p-2">
@@ -30,17 +23,18 @@ const ProductCard = ({ product }) => {
           </p>
           <div>
             <button
-              className="p-1 text-white bg-indigo-600 hover:bg-indigo-800 rounded-lg"
-              onClick={handleAddToCart}
+              className="p-1 text-white bg-indigo-600 hover:bg-indigo-800 rounded-lg mx-1"
+              onClick={() => dispatch(addToCart(product))}
             >
               Add To Cart
             </button>
             <button
-              className="p-1 text-white bg-red-600 hover:bg-red-800 rounded-lg"
-              onClick={handleRemoveFromCart}
+              className="p-1 text-white bg-red-600 hover:bg-red-800 rounded-lg mx-1"
+              onClick={() => dispatch(removeFromCart(product.id))}
             >
               Remove From Cart
             </button>
+            <p className="text-green-500">Quantity:{quantity}</p>
           </div>
         </div>
       </div>
